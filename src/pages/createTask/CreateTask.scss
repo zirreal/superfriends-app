@@ -1,0 +1,38 @@
+@import '../../vars.scss';
+
+.create-task {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  &__form {
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+}
+
+
+// date-picker styles
+.react-date-picker__calendar {
+  z-index: 10;
+}
+
+.react-date-picker__wrapper {
+  border: none;
+}
+
+.react-calendar__tile--active {
+  background: $accent-color-blue;
+}
+
+.react-date-picker__clear-button,
+.react-date-picker__calendar-button,
+.react-date-picker__inputGroup__input
+ {
+  &:focus-visible {
+    outline-color: $accent-color-blue;
+  }
+}
+

@@ -1,0 +1,111 @@
+@import '../../vars.scss';
+
+.task-summary {
+  max-width: 600px;
+  width: 100%;
+  padding: 30px 0;
+  margin-bottom: 30px;
+  background-color: $color-light;
+  box-shadow: 1px 1px 8px $text-color-darker;
+
+  &__title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__header {
+    padding: 0 30px;
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid $accent-color-red;
+  }
+
+  &__text {
+    line-height: 30px;
+    color: #bbb;
+  }
+
+  &__glyph {
+    height: 50px;
+    width: 50px;
+  }
+
+  &__descr {
+    padding: 0 30px;
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 28px;
+    color: $text-color;
+    border-bottom: 4px solid $accent-color-red;
+  }
+
+  &__team {
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-right: 20px;
+      color: #bbb;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+
+    & .avatar {
+      width: 80px;
+      height: 80px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.task__buttons {
+  button {
+    padding: 15px 40px 15px 20px;
+    line-height: 1;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &:not(:last-of-type) {
+      margin-right: 10px;
+    }
+  }
+
+  & .btn-blue {
+   font-size: 14px;
+  }
+
+  .btn {
+    background-position: right 10px top 9px;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+
+    &-delete {
+      background-image: url('../../assets/delete.svg');
+    }
+
+    &-complete {
+      background-position: right 10px top 11px;
+      background-image: url('../../assets/complete.svg');
+    }
+  }
+}
+
+.task-completed {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 10px;
+  font-size: 14px;
+  color: #eee;
+  background-color: rgb(63, 141, 63);
+  border: 1px dashed $accent-color-blue;
+  pointer-events: none;
+  opacity: 0.6;
+}

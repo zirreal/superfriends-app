@@ -1,0 +1,76 @@
+@import '../vars.scss';
+
+.burger {
+  display:none;
+  flex-direction: column;
+  width: 70px;
+  padding: 0;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.33s ease-in-out, color 0.33s ease-in-out;
+
+  &__line {
+    height: 5px;
+    margin: 4px 0;
+    background-color: $text-color-darker;
+    border-radius: 10px;
+    transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+    &:first-child {
+      width:75%;
+    }
+
+    &:nth-child(2) {
+      width:100%;
+    }
+
+    &:last-child {
+      width:75%;
+    }
+  }
+
+  &:hover {
+    span {
+      background-color: $accent-color-red;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:focus-visible {
+    border-radius: 5px;
+    background-color: $color-light;
+  }
+
+  &.active {
+
+    & .burger__line {
+       &:first-child {
+        transform-origin: bottom;
+        transform:rotatez(45deg) translate(8px,0px)
+      }
+
+      &:nth-child(2) {
+        transform-origin: top;
+        transform: rotatez(-45deg)
+      }
+
+      &:last-child {
+        transform-origin:bottom;
+        width:25%;
+        transform: translate(45px, 2px) rotatez(45deg);
+      }
+    }
+  }
+}
+
+// media
+@media (max-width: 650px) {
+  .burger {
+    display: flex;
+  }
+}

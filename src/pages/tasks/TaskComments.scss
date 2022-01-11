@@ -1,0 +1,52 @@
+@import '../../vars.scss';
+
+.task-comments {
+
+  &__title {
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: $text-color;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+
+    & .avatar {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1;
+    color: $text-color-darker;
+  }
+
+  &__name,
+  &__time {
+    font-size: 12px;
+    line-height: 18px;
+    color: #bbb
+  }
+
+  .no-comments {
+    margin-bottom: 20px;
+  }
+}
+
+// media 
+@media(max-width: 990px) {
+  .task-comments__title {
+    margin-bottom: 20px;
+  }
+}

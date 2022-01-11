@@ -1,0 +1,66 @@
+@import '../vars.scss';
+
+.tasks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: minmax(100px, auto); 
+  gap: 20px;
+
+  &__item {
+    padding: 30px;
+    background-color: $color-light;
+    box-shadow: 1px 1px 5px $text-color;
+    transition: transform 0.4s ease-in-out;
+
+    &:hover {
+      transform: scale(1.01) rotate(3deg);
+    }
+  }
+
+  &__link {
+    transition: outline 0.3s ease-in;
+
+    &:focus { 
+      outline-color: $accent-color-blue;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  &__text {
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px dashed #bbb;
+  }
+
+  &-team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__list {
+      display: flex;
+      align-items: center;
+    }
+
+    &__item {
+      flex-grow: 1;
+    }
+
+    & .avatar {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+    &__glyph {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

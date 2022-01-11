@@ -1,0 +1,38 @@
+@import '../vars';
+.header {
+  padding: 20px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $accent-color-blue;
+
+  &__logo {
+    // width: 60px;
+    height: 60px;
+
+    img {
+      margin-right: 30px;
+      width: 60px;
+    }
+  }
+
+  &__btn {
+    margin-left: 10px;
+    color: $accent-color-blue;
+    background-color: $text-color-darker;
+    
+  }
+
+}
+
+@media (max-width: 650px) {
+  .header {
+    padding: 20px 50px;
+  }
+}
+
+@media (max-width: 575px) {
+  .header {
+    padding: 20px;
+  }
+}

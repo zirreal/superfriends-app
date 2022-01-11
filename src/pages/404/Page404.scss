@@ -1,0 +1,79 @@
+@import '../../vars.scss';
+
+.page-404 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  margin: 20vh auto;
+  flex-direction: column;
+  align-items: center;
+  animation: blackToColor 1.5s ease-in-out;
+  &__img {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    
+    z-index: 4;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      perspective: 400px;
+      transform-style: preserve-3d;
+      animation: fly 3s ease-in-out 1.5s infinite;
+    
+    }
+  }
+
+  &__text {
+    position: absolute;
+    padding: 10px;
+    top: 0;
+    right: 40px;
+    font-size: 1em;
+    font-weight: 700;
+    color: $color-light;
+    text-transform: uppercase;
+    background-color: $accent-color-red;
+    border-radius: 15px;
+    box-shadow: 1px 2px 5px rgba($color: #000000, $alpha: 0.5);
+    animation: textMove 4s ease-in-out 1.5s infinite;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 32px;
+      bottom: -20px;
+      border-left: 14px solid $accent-color-red;
+      border-right: 12px solid transparent;
+      border-top: 10px solid $accent-color-red;
+      border-bottom: 20px solid transparent;
+    }
+  }
+}
+
+// animation 
+@keyframes fly
+{
+    0%{ transform:rotateZ(0) translate3d(0, 0, 0) }
+    25%{ transform:rotateZ(3deg) translate3d(10px,25px,10px)}
+    50%{ transform:rotateZ(-5deg) translate3d(20px,20px,20px)}
+    75%{ transform:rotateZ(3deg) translate3d(40px,10px,80px)}
+    100%{ transform:rotateZ(0)  translate3d(0px,0px,0px)}
+}
+
+@keyframes textMove
+{
+    0%{ transform:rotateZ(0) translate3d(0, 0, 0) scale(1) }
+    25%{ transform: translate3d(10px,-25px,10px) }
+    50%{ transform:rotateZ(-2deg) translate3d(20px,-20px,23px) scale(0.8)}
+    75%{ transform: translate3d(30px,-10px,20px)}
+    100%{ transform:rotateZ(0)  translate3d(0px,0px,0px) scale(1)}
+}
+
+@keyframes blackToColor
+{
+    0%{ filter: grayscale(100%); }
+    50%{ filter: grayscale(50%);}
+    100%{ filter: grayscale(0%);}
+}

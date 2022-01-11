@@ -1,0 +1,249 @@
+@import '../vars.scss';
+
+.sidebar {
+  position: relative;
+  width: 350px;
+  min-width: 350px;
+  min-height: 100vh;
+  color: $color-light;
+  background-color: $accent-color-red;
+
+  & .close-btn {
+    display: none;
+  }
+
+  &__block {
+    position: fixed;
+    width: inherit;
+    min-height: 100vh;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 10;
+  }
+
+  &__user {
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background-color: $color-light;
+    }
+
+  }
+
+  &__notification {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    &-btn {
+      border: 1px solid transparent;
+      background-color: transparent;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+
+      &:hover {
+        animation: swing 1s ease-in-out 1;
+      }
+
+      &:focus-visible {
+        background-color: $accent-color-blue;
+        border: 1px solid $color-light;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__greetings {
+    margin-top: 30px;
+    font-size: 20px;
+
+  }
+
+  &__nav {
+    padding: 80px 0px 40px 40px;
+  }
+
+  .nav {
+
+    &__list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    &__item {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      font-weight:  400;
+      font-size: 20px;
+      color: $color-light;
+      transition: transform 0.33s ease-in;
+      z-index: 4;
+
+      &:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
+
+      &:hover {
+        transform: rotate(-3deg);
+      }
+
+      &--users {
+        padding: 20px 10px 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.33s ease-in-out, transform 0.33s ease-in-out;
+
+        &:focus-visible{
+          outline: none;
+          background-color: $text-color;
+        }
+
+        &-active {
+          img {
+            filter: invert(100%);
+            // filter: brightness(0.76) sepia(2) saturate(2000%) hue-rotate(186deg);
+          }
+        }
+      }
+
+      span {
+        margin-right: 20px;
+      }
+
+    }
+
+    &__link {
+      padding: 10px 10px 10px 20px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      border: 1px solid transparent;
+      transition: background-color 0.3s ease-in, color 0.3s ease-in, border-radius 0.4s ease-in-out, opacity 0.33s ease-in;
+
+      &:active {
+        opacity: 0.7;
+      }
+
+      &:focus{
+        outline: none;
+        background-color: $text-color;
+      }
+    }
+    
+
+    & .active {
+      font-weight: 400;
+      color: $text-color-darker;
+      border-radius: 20px 0 0 20px;
+      background-color: $accent-color-blue;
+
+      &:focus-visible{
+        outline: none;
+        color: $color-light;
+        background-color: $text-color;
+
+        img {
+          filter: invert(20%);
+        }
+      }
+
+      img {
+        filter: invert(100%);
+        transition: filter 0.3s ease-in;
+      }
+
+    }
+
+    &__img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+}
+
+
+// media
+@media(max-width: 1200px) {
+  .sidebar {
+    width: 250px;
+    min-width: 250px;
+
+    &__content {
+      overflow: hidden;
+    }
+
+    &__greetings {
+      font-size: 18px;
+    }
+  }
+}
+
+@media(max-width: 650px) {
+  .sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom:0;
+    right: 0;
+    transform: translateX(-150%) rotateZ(-3deg);
+    transition: transform 0.5s ease-in-out;
+    z-index: 99;
+
+
+    &-active {
+      transform: translateX(0) rotateZ(0);
+
+      & .close-btn {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 30px;
+        color: $color-light;
+        background-color: transparent;
+        border: 1px solid transparent;
+        cursor: pointer;
+        z-index: 100;
+        transition: color 0.33s ease-in-out, background-color 0.33s ease-in-out;
+
+        &:hover {
+          color: $accent-color-blue;
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        &:focus-visible {
+          background-color: $text-color-darker; 
+        }
+      }
+    }
+
+  }
+}

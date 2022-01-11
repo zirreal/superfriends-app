@@ -1,0 +1,66 @@
+@import '../../vars.scss';
+
+.messages {
+  position: relative;
+  min-height: 50vh;
+  padding: 80px 0;
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    padding: 20px;
+    background-color: $color-light;
+    border: 2px dashed $accent-color-red;
+    box-shadow: 0px 4px 4px rgba(145, 145, 145, 0.25);
+    transition: transform 0.6s ease-in-out;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &:hover {
+      transform: translateX(2%) rotateZ(-2deg);
+    }
+  }
+
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.4s ease-in-out;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      background-color:rgba(145, 145, 145, 0.25);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+
+    & .avatar {
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+    }
+  }
+
+  &__sub-title {
+    font-size: 18px;
+    color: $text-color;
+  }
+
+  &__display-msg {
+    font-size: 14px;
+    color: #bbb;
+  }
+
+
+}

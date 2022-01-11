@@ -1,0 +1,14 @@
+.signup {
+  &__title {
+    margin-bottom: 40px;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__btn {
+    align-self: center;
+    padding: 8px 70px;
+    font-size: 20px;
+    text-transform: lowercase;
+  }
+}

@@ -1,0 +1,164 @@
+@import '../../vars.scss';
+
+.user-info{
+  position: relative;
+  padding: 100px 0;
+  min-height: 50vh;
+
+  &__header {
+    position: relative;
+    height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    margin-bottom: 80px;
+    display: flex;
+    align-items: center;
+    background-color: $color-light;
+    box-shadow: 1px 2px 5px #bbb;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 50px;
+      width: 18px;
+      height: 100%;
+      background-color: $accent-color-red;
+    }
+  }
+
+
+  &__title {
+    font-size: 2.5em;
+    letter-spacing: 5px;
+    color: $accent-color-red;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    padding: 20px 0;
+    background-color: $color-light;
+    box-shadow: 1px 2px 5px #bbb;
+  }
+
+  &__quote {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 20px;
+    margin-bottom: 50px;
+    min-height: 98px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $accent-color-blue;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    p {
+      padding: 0;
+      text-align: right;
+      max-width: 350px;
+    }
+  }
+
+  &__text {
+    padding: 0 20px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: $text-color-darker;
+  }
+
+  &__data {
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    border-bottom: 6px solid $accent-color-blue;
+  }
+
+  &__photo {
+    padding-left: 20px;
+    max-width: 500px;
+    max-height: 550px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__item {
+    padding: 16px 22px;
+    font-size: 16px;
+    line-height: 1;
+    color: $color-light;
+    background-color: $accent-color-red;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+}
+
+@media(max-width: 990px) {
+  .user-info {
+    &__title {
+      font-size: 24px;
+    }
+  }
+}
+
+@media(max-width: 760px) {
+  .user-info {
+    padding: 50px 0;
+
+    &__header {
+      margin-bottom: 50px;
+      padding-left: 20px;
+
+      &::after {
+        right: 20px;
+      }
+    }
+
+    &__title {
+      font-size: 1em;
+      letter-spacing: 4px;
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+
+    &__item {
+      font-size: 14px;
+    }
+
+    &__data {
+      padding: 0 20px;
+      padding-bottom: 20px;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, minmax(200px, auto));
+      row-gap: 20px;
+
+    }
+
+    &__photo {
+      padding: 0;
+    }
+  }
+}
