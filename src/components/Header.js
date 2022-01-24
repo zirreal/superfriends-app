@@ -17,7 +17,7 @@ export default function Header({show, setShow}) {
 
   return (
     <header className="header">
-      <BurgerBtn show={show} setShow={setShow}/>
+      {user && <BurgerBtn show={show} setShow={setShow}/>}
       <div className="header__logo">
         <img src={logo} alt="logo" />
       </div>
