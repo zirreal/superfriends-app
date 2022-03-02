@@ -109,3 +109,11 @@
   pointer-events: none;
   opacity: 0.6;
 }
+
+
+@media (max-width: 560px) {
+  .task-summary__list .avatar {
+    width: 40px;
+    height: 40px;
+  }
+}
