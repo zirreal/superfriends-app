@@ -23,6 +23,7 @@ export const AuthContextProvider = ({children}) => {
   })
 
   // check user's status
+
   useEffect(() => {
     const unsub = projectAuth.onAuthStateChanged((user) => {
       dispatch({type: 'AUTH_IS_READY', payload: user})
