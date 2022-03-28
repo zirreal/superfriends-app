@@ -102,3 +102,8 @@ https://superfriends-app.web.app/
 - formik
 - yup
 - date-fns
+
+
+### Для входа используйте данные ниже или создайте новый аккаунт : 😊
+  - email: brainy@tower.com
+  - password: brainy
