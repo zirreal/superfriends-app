@@ -44,6 +44,11 @@ https://superfriends-app.web.app/
 - yup
 - date-fns
 
+## Login using this info or create a new account. 😊
+- data: 
+  email: brayny@tower.com
+  password: brainy
+
 
 ---
 
